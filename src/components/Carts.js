@@ -12,7 +12,7 @@ const Carts = () => {
   }
 
   return (
-    <div className='border border-green-700  '>
+    <div className='border border-green-700 mt-10 '>
       <div className='flex align-center mx-auto justify-center'>
       {
         carts.length >0 ? (
@@ -27,7 +27,7 @@ const Carts = () => {
       </div>
       { carts.length > 0 && (
       <div>
-        <button className=' border text-green-700 flex align-center mx-auto justify-center' onClick={checkout}>Check Out</button>
+        <button className='border p-2 border rounded-lg bg-coral text-white flex align-center mx-auto justify-center' onClick={checkout}>Check Out</button>
       </div>
       )}
     </div>

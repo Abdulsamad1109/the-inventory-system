@@ -23,14 +23,14 @@ const AdminRegistration = () => {
     const myHandleSubmit = async(values)=>{
         
         let {confirmPassword, ...rest} = values
-        await axios.post("http://127.0.0.1:7000/users/register", rest)
+        await axios.post("http://127.0.0.1:7001/users/register", rest)
         
-        // let result = await axios.get("http://127.0.0.1:7000/users/see-users")
+        // let result = await axios.get("http://127.0.0.1:7001/users/see-users")
         // console.log(result.data);
     }
 
     // const seeUsers = async()=>{
-    //     let result = await axios.get("http://127.0.0.1:7000/users/see-users")
+    //     let result = await axios.get("http://127.0.0.1:7001/users/see-users")
     //     console.log(result);
     // }
 

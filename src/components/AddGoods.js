@@ -12,29 +12,28 @@ const AddGoods = () => {
         setPrice("")
         setQty("")
 
-        await axios.post("http://127.0.0.1:7000/goods/addGoods", {name,price,qty})
+        await axios.post("http://127.0.0.1:7001/goods/addGoods", {name,price,qty})
 
-        let result = await axios.get("http://127.0.0.1:7000/goods/see-goods")
+        let result = await axios.get("http://127.0.0.1:7001/goods/see-goods")
         console.log(result);
 
-    }
-
-    const seeGoods = async()=>{
-      let result = await axios.get("http://127.0.0.1:7000/goods/see-goods")
-        console.log(result);
     }
 
   return (
-    <div className='max-w-md mx-auto my-20 p-7 bg-white rounded-lg shadow-md flex flex-col items-center justify-center'>
-      <div className='flex flex-col space-y-6'>
-      <input value={name} onInput={(e)=>{setName(e.target.value)}} className='border border-emerald-400 w-44 rounded-lg h-10 outline-none' placeholder='  name'/>
-      <input value={price} onInput={(e)=>{setPrice(e.target.value)}} className='border border-emerald-400 w-44 rounded-lg h-10 outline-none' placeholder='  price'/>
-      <input value={qty} onInput={(e)=>{setQty(e.target.value)}} className='border border-emerald-400 w-44 rounded-lg h-10 outline-none' placeholder='  quantity'/>
-      <button onClick={addGoods} className='border rounded w-44 bg-emerald-800 text-white h-10'>Add Goods</button>
+    <div className='font-sans m-0 p-0 bg-white'>
+       <header className='bg-slate-800 text-white text-4xl font-bold p-4 text-center'>
+            <h1>
+            Inventory system
+            </h1>
+        </header>
+      <div className='p-8 max-w-xl mx-auto bg-white shadow-custom'>
+      <form className='flex flex-col'>
+      <input value={name} onInput={(e)=>{setName(e.target.value)}} className='mb-6 p-2 border border-gray-300 rounded-lg outline-none' placeholder='name'/>
+      <input value={price} onInput={(e)=>{setPrice(e.target.value)}} className='mb-6 p-2 border border-gray-300 rounded-lg outline-none' placeholder='price'/>
+      <input value={qty} onInput={(e)=>{setQty(e.target.value)}} className='mb-6 p-2 border border-gray-300 rounded-lg outline-none' placeholder='quantity'/>
+      <button onClick={addGoods} className='border rounded-lg bg-coral text-white h-10'>Add Goods</button>
+      </form>
       </div>
-      
-
-      <button onClick={seeGoods}>See Goods</button>
     </div>
   )
 }

@@ -11,8 +11,8 @@ const AdminLogin = () => {
         </header>
         <main className='p-8 max-w-xl mx-auto bg-white shadow-custom'>
         <form className='flex flex-col'>
-        <input className='mb-6 p-2 border border-gray-300 rounded-lg  outline-none' placeholder='   email'/>
-        <input className='mb-6 p-2 border border-gray-300 rounded-lg  outline-none' placeholder='   password'/>
+        <input className='mb-6 p-2 border border-gray-300 rounded-lg outline-none' placeholder='   email'/>
+        <input className='mb-6 p-2 border border-gray-300 rounded-lg outline-none' placeholder='   password'/>
         <button className='border rounded-lg bg-coral text-white h-10'>Log in</button>
         <span className='mb-10 text-center'>No account yet? <Link className='text-emerald-400' to='/adminregistration'>create account</Link></span> 
         </form>

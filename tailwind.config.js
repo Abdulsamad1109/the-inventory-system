@@ -10,6 +10,8 @@ module.exports = {
       },
       colors: {
         coral: '#FF7F50',
+        lightcoral: '#FF7F50',
+        slategrey: '#2F4F4F',
       },
     },
   },
