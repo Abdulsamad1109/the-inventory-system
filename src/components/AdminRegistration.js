@@ -24,6 +24,7 @@ const AdminRegistration = () => {
         
         let {confirmPassword, ...rest} = values
         await axios.post("http://127.0.0.1:7001/users/register", rest)
+        resetForm()
         
         // let result = await axios.get("http://127.0.0.1:7001/users/see-users")
         // console.log(result.data);
@@ -35,7 +36,7 @@ const AdminRegistration = () => {
     // }
 
     let {handleChange, values: {firstName, lastName, email, password, confirmPassword},
-    handleSubmit,errors,
+    handleSubmit, resetForm,errors,
     ...formik} = useFormik({
         initialValues,
         onSubmit: myHandleSubmit,
@@ -45,7 +46,7 @@ const AdminRegistration = () => {
 
   return (
     <div className='font-sans m-0 p-0 bg-white'>
-        <header className='bg-slate-800 text-white text-4xl font-bold p-4 text-center'>
+        <header className='bg-slate-700 text-white text-4xl font-bold p-4 text-center'>
             <h1>
             Inventory system
             </h1>
@@ -68,9 +69,9 @@ const AdminRegistration = () => {
             
         </main>
 
-        <footer className='bg-slate-800 text-white text-center p-4 bottom-0 w-full fixed'>
+        {/* <footer className='bg-slate-800 text-white text-center p-4 bottom-0 w-full fixed'>
         <p>&copy; 2024 Adelani Adeleye Gbadebo</p>
-    </footer>
+    </footer> */}
         
     {/* <button onClick={seeUsers}>click</button> */}
     </div>

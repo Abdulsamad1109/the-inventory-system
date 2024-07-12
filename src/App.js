@@ -15,13 +15,17 @@ function App() {
   let [price, setPrice] = useState("")
   let [qty, setQty] = useState("")
   let [carts, setCarts] = useState([])
+  let [loginEmail, setLoginEmail] = useState("")
+  let [loginPassword, setLoginPassword] = useState("")
 
   
   return (
     <div className='font-sans'>
 
       
-      <productsContext.Provider value={{products,setProducts,name,setName,price,setPrice,qty,setQty,carts,setCarts}}>
+      <productsContext.Provider value={{products,setProducts,name,setName,price,setPrice,qty,setQty,
+      carts,setCarts,loginEmail,setLoginEmail,loginPassword,setLoginPassword}
+        }>
         {/* <nav className=' p-4 flex space-x-4 text-emerald-600 '>
           <Link to='/'>Home</Link>
           <Link to='/addgoods'>AddGoods</Link>

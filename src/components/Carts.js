@@ -1,14 +1,28 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { productsContext } from '../App'
+import axios from 'axios'
 
 const Carts = () => {
   let [message, setMessage] = useState("")
   let {carts,setCarts} = useContext(productsContext)
 
-  const checkout =()=>{
+
+  const checkout = async()=>{
+    // let ids = carts.map((cart,i) => cart._id)
+    // let qtys = carts.map((cart,i) => cart.qty)
+
+    // let itemsToUpdate ={
+    //   ids,
+    //   qtys
+    // }
+    // console.log(itemsToUpdate);
+
     setCarts([])
     setMessage("YOUR PURCHASE IS SUCCESSFUL")
+    
+    await axios.post("http://127.0.0.1:7001/goods/updateGoodsQty")
+
   }
 
   return (
