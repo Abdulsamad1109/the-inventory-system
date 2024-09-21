@@ -8,10 +8,14 @@ const LandingPage = () => {
     const { products, setProducts, carts, setCarts } = useContext(productsContext);
     const [numberOfGoods, setNumberOfGoods] = useState(0)
 
-    const addToCart = (i) => {
+
+
+    const addToCart = async(i) => {
         const allCarts = products[i];
         setCarts([...carts, allCarts]);
         setNumberOfGoods(numberOfGoods+1)
+    
+    
     };
 
 

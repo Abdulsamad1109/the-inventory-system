@@ -21,7 +21,7 @@ const Carts = () => {
     setCarts([])
     setMessage("YOUR PURCHASE IS SUCCESSFUL")
     
-    await axios.post("http://127.0.0.1:7001/goods/updateGoodsQty")
+    await axios.post("http://127.0.0.1:7001/goods/updateGoodsQty", )
 
   }
 

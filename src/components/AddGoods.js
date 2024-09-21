@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 const AddGoods = () => {
   let {name,setName,price,setPrice,qty,setQty} = useContext(productsContext)
   
-    
+
+
+  let retrievedToken = JSON.parse(localStorage.getItem("jwt_token"))
 
     const addGoods = async(e)=>{
       e.preventDefault()
@@ -15,13 +17,16 @@ const AddGoods = () => {
         setQty("")
 
         try {
-          await axios.post("http://127.0.0.1:7001/goods/addGoods", {name,price,qty})
+          await axios.post("http://127.0.0.1:7001/goods/addGoods", {name,price,qty}, {
+            headers: {
+              "Authorization": `bearer ${retrievedToken}`
+            }
+          })
+
           alert("Good added successfully")
         } catch (error) {
           alert("failed to add good")
         }
-        // let result = await axios.get("http://127.0.0.1:7001/goods/see-goods")
-        // console.log(result);
 
     }
 

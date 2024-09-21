@@ -8,15 +8,21 @@ const AdminLogin = () => {
   let {loginEmail,setLoginEmail,loginPassword,setLoginPassword} = useContext(productsContext)
   let navigate = useNavigate()
 
+
+
   const logIn = async(e) =>{
 
     e.preventDefault()
 
     try {
-      let result = await axios.post("http://127.0.0.1:7001/users/login", {loginEmail,loginPassword})
-      if (result.data) {
-        navigate("/addgoods")
-      }
+      let result = await axios.post("http://127.0.0.1:7001/users/login", {loginEmail,loginPassword}, )
+      // if (result.data) {
+      //   navigate("/addgoods")
+      // }
+      // console.log(result.data.jwt_token);
+      let jwt_token = result.data.jwt_token
+      localStorage.setItem("jwt_token", JSON.stringify(jwt_token))
+
     } catch (error) {
       console.log("login error", error);
     }
